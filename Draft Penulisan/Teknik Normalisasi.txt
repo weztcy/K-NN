@@ -1,0 +1,11 @@
+Min-Max Scaling
+
+Z-Score / Standard Scaling
+
+Decimal Scaling
+
+Robust Scaler
+
+L2 Normalization
+
+Log Transformation
