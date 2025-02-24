@@ -10,3 +10,17 @@ L2 Normalization
 
 Log Transformation
 
+
+
+Min-Max Scaling = 0.81
+
+Z-Score / Standard Scaling = 0.74
+
+Decimal Scaling = 0.75
+
+Robust Scaler = 0.75
+
+L2 Normalization = 0.68
+
+Log Transformation = 0.78
+
