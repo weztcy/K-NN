@@ -1,0 +1,124 @@
+Ekperimen 1
+
+Alur notebook ini:
+Load Dataset -> Normalisasi -> Feature Selection -> Bagi Dataset -> Latih Model
+
+
+
+Prompt:
+Saya akan berikan kode. Tolong dipahami saja dan jangan lakukan apapun termasuk memberi penjelasan
+
+
+
+Cell 1 - Load Dataset:
+
+import pandas as pd
+
+# Memuat dataset CSV
+df = pd.read_csv('diabetes.csv')
+
+# Menampilkan 5 baris pertama dari dataset
+print(df.head())
+
+
+
+Cell 2 - Membagi Dataset Berdasarkan Tipe Data:
+
+import pandas as pd
+
+# Membagi kolom berdasarkan tipe data
+numerical_features = df.select_dtypes(include=['int64', 'float64']).columns  # Kolom numerik
+categorical_features = df.select_dtypes(include=['object', 'category']).columns  # Kolom kategorikal
+
+# Khusus fitur Outcome sebagai kategorikal
+categorical_features = list(categorical_features)  # Konversi ke list
+if 'Outcome' in df.columns:
+    categorical_features.append('Outcome')  # Tambahkan fitur 'Outcome' sebagai kategorikal
+    numerical_features = numerical_features.drop('Outcome')  # Hapus 'Outcome' dari fitur numerik
+
+
+
+Cell 3 - Normalisasi dengan Metode Min-Max Scaling
+
+from sklearn.preprocessing import MinMaxScaler
+
+# Inisialisasi scaler Min-Max
+scaler = MinMaxScaler()
+
+# Melakukan normalisasi pada fitur numerik
+df[numerical_features] = scaler.fit_transform(df[numerical_features])
+
+# Menyimpan hasil normalisasi ke file CSV
+df.to_csv('diabetes_normalized.csv', index=False)
+
+
+
+
+Cell 4 - Feature Selection
+
+# Menghapus fitur yang tidak diinginkan
+df = df.drop(columns=['SkinThickness', 'Insulin', 'Pregnancies', 'BloodPressure'])
+
+# Menampilkan dataset setelah penghapusan fitur
+print(df.head())
+
+# Menyimpan hasil seleksi fitur ke file CSV
+df.to_csv('diabetes_feature_selected.csv', index=False)
+
+
+
+Cell 5 - Membagi Dataset Menjadi Data Training dan Data Testing
+
+from sklearn.model_selection import train_test_split
+
+# Memisahkan dataset menjadi fitur (X) dan target (y)
+X = df.drop(columns=['Outcome'])  # Fitur
+y = df['Outcome']  # Target
+
+# Membagi dataset menjadi training dan testing (80% training, 20% testing)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Menggabungkan X_train dan y_train menjadi dataset training
+train_df = X_train.copy()
+train_df['Outcome'] = y_train
+
+# Menggabungkan X_test dan y_test menjadi dataset testing
+test_df = X_test.copy()
+test_df['Outcome'] = y_test
+
+# Menyimpan dataset training dan testing ke file CSV
+train_df.to_csv('diabetes_train.csv', index=False)
+test_df.to_csv('diabetes_test.csv', index=False)
+
+
+
+Cell 6 - Latih Model KNN
+
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report
+
+# Menyusun k_values
+k_values = [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+# Latih model KNN untuk setiap nilai k dan simpan hasilnya
+knn_models = {}
+for k in k_values:
+    knn = KNeighborsClassifier(n_neighbors=k)
+    knn.fit(X_train, y_train)
+    knn_models[k] = knn
+
+# Simpan model-model KNN dalam dictionary knn_models
+print("Model KNN berhasil dilatih dengan berbagai nilai k.")
+
+
+
+Cell 7 - Classification Report
+
+# Menampilkan classification report untuk setiap model KNN
+for k, model in knn_models.items():
+    print(f"\nClassification Report untuk k = {k}:")
+    y_pred = model.predict(X_test)
+    print(classification_report(y_test, y_pred))
+
+
+
