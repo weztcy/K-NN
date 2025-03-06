@@ -1,0 +1,13 @@
+Eksperimen 7 Maret 2025
+
+
+
+Alur notebook:
+
+# Eksperimen 1
+Load Dataset -> Normalisasi -> Feature Selection -> Split Dataset -> Latih Model
+
+# Eksperimen 2
+Load Dataset -> Split Dataset -> Normalisasi -> Feature Selection -> Latih Model
+
+Persamaan eksperimen 1 dan 2 adalah untuk normalisasi dan feature selection sama-sama dilakukan terhadap kedua dataset (Training dan Testing). Cuma bedanya di eksperimen 1, split datanya dilakukan setelah feature selection. Sedangkan di eksperimen 2, split datanya dilakukan sebelum normalisasi.
