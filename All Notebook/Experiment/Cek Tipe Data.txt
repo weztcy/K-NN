@@ -1,0 +1,12 @@
+Cek Tipe Data
+Cek Missing Values (Nilai yang Hilang)
+Cek Nilai yang Tidak Valid
+Cek Duplikasi
+Cek Konsistensi Kolom Kategorikal (Outcome)
+Cek Rentang Nilai untuk Kolom Numerik
+
+Periksa Tipe Data
+
+Cek Missing Values di Setiap Kolom
+
+Cek Data Duplikat
