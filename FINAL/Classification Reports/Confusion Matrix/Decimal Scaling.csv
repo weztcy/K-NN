@@ -1,0 +1,7 @@
+k,True Negative (TN),False Positive (FP),False Negative (FN),True Positive (TP)
+1,77,22,21,34
+3,72,27,19,36
+5,76,23,20,35
+7,77,22,19,36
+9,79,20,20,35
+11,79,20,22,33
