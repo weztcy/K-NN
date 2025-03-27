@@ -1,0 +1,85 @@
+Prompt:
+Saya akan berikan kode. Tolong dipahami saja dan jangan lakukan apapun termasuk memberi penjelasan
+
+
+
+Cell 1 - Load Dataset:
+
+import pandas as pd
+
+# Memuat dataset CSV
+df = pd.read_csv('diabetes.csv')
+
+# Menampilkan 5 baris pertama dari dataset
+print(df.head())
+
+
+
+Cell 2 - Membagi Dataset Berdasarkan Tipe Data:
+
+import pandas as pd
+
+# Membagi kolom berdasarkan tipe data
+numerical_features = df.select_dtypes(include=['int64', 'float64']).columns  # Kolom numerik
+categorical_features = df.select_dtypes(include=['object', 'category']).columns  # Kolom kategorikal
+
+# Khusus fitur Outcome sebagai kategorikal
+categorical_features = list(categorical_features)  # Konversi ke list
+if 'Outcome' in df.columns:
+    categorical_features.append('Outcome')  # Tambahkan fitur 'Outcome' sebagai kategorikal
+    numerical_features = numerical_features.drop('Outcome')  # Hapus 'Outcome' dari fitur numerik
+
+
+
+Cell 3 - Membagi Dataset Menjadi Data Training dan Data Testing
+
+from sklearn.model_selection import train_test_split
+
+# Membagi dataset menjadi data training dan data testing
+X = df.drop('Outcome', axis=1)  # Fitur (tanpa kolom 'Outcome')
+y = df['Outcome']  # Target (kolom 'Outcome')
+
+# Membagi data menjadi 80% untuk training dan 20% untuk testing
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Menggabungkan kembali X_train dan y_train menjadi satu dataframe untuk diekspor
+train_df = pd.concat([X_train, y_train], axis=1)
+
+# Menggabungkan kembali X_test dan y_test menjadi satu dataframe untuk diekspor
+test_df = pd.concat([X_test, y_test], axis=1)
+
+# Mengekspor dataset training dan testing ke file CSV
+train_df.to_csv('diabetes_train.csv', index=False)
+test_df.to_csv('diabetes_test.csv', index=False)
+
+print("Data training dan testing berhasil diekspor ke diabetes_train.csv dan diabetes_test.csv")
+
+
+
+Cell 4 - Normalisasi dengan Metode Min-Max Scaling
+
+from sklearn.preprocessing import StandardScaler
+
+# Inisialisasi StandardScaler
+scaler = StandardScaler()
+
+# Melakukan normalisasi pada fitur training dan testing
+X_train_scaled = scaler.fit_transform(X_train)  # Normalisasi data training
+X_test_scaled = scaler.transform(X_test)  # Normalisasi data testing menggunakan scaler yang sudah fit
+
+# Menggabungkan kembali X_train_scaled dan y_train menjadi satu dataframe untuk diekspor
+train_scaled_df = pd.concat([pd.DataFrame(X_train_scaled, columns=X.columns), y_train.reset_index(drop=True)], axis=1)
+
+# Menggabungkan kembali X_test_scaled dan y_test menjadi satu dataframe untuk diekspor
+test_scaled_df = pd.concat([pd.DataFrame(X_test_scaled, columns=X.columns), y_test.reset_index(drop=True)], axis=1)
+
+# Mengekspor dataset training dan testing yang sudah dinormalisasi ke file CSV
+train_scaled_df.to_csv('diabetes_train_scaled.csv', index=False)
+test_scaled_df.to_csv('diabetes_test_scaled.csv', index=False)
+
+print("Data training dan testing berhasil dinormalisasi dan diekspor ke diabetes_train_scaled.csv dan diabetes_test_scaled.csv")
+
+
+
+
+Cell 4 - 

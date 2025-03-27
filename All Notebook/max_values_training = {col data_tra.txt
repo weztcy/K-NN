@@ -1,0 +1,3 @@
+max_values_training = {col: data_training[col].abs().max() for col in columns_to_scale}
+
+max_values_combined = {col: max(data_training[col].abs().max(), data_testing[col].abs().max()) for col in columns_to_scale}

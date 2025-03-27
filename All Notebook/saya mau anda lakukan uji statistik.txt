@@ -1,0 +1,8 @@
+saya mau anda lakukan uji statistik dan mencari signifikansi untuk setiap metrik evaluasi, saya mau anda bandingkan semua metode normalisasi dengan yang tanpa normalisasi, buatkan kodenya
+
+
+
+saya mau anda lakukan uji statistik dan mencari signifikansi, saya mau anda bandingkan setiap metode normalisasi dengan yang tanpa normalisasi, buatkan kodenya 
+
+
+Untuk membandingkan metode normalisasi dengan yang tanpa normalisasi menggunakan uji statistik, kita bisa melakukan uji t untuk sampel berpasangan (paired t-test). Ini akan membantu kita mengetahui apakah ada perbedaan signifikan antara dua metode. Dalam hal ini, kita akan membandingkan akurasi dari "Tanpa Normalisasi" dengan akurasi metode normalisasi lainnya seperti Min-Max Scaling, Z-Score (Standard Scaling), dan Decimal Scaling.

@@ -1,0 +1,50 @@
+Prompt:
+Saya akan berikan kode. Tolong dipahami saja dan jangan lakukan apapun termasuk memberi penjelasan
+
+
+
+Cell 1 - Load Dataset:
+
+import pandas as pd
+
+# Memuat dataset CSV
+df = pd.read_csv('diabetes.csv')
+
+# Menampilkan 5 baris pertama dari dataset
+print(df.head())
+
+
+
+Cell 2 - Membagi Dataset Berdasarkan Tipe Data:
+
+import pandas as pd
+
+# Membagi kolom berdasarkan tipe data
+numerical_features = df.select_dtypes(include=['int64', 'float64']).columns  # Kolom numerik
+categorical_features = df.select_dtypes(include=['object', 'category']).columns  # Kolom kategorikal
+
+# Khusus fitur Outcome sebagai kategorikal
+categorical_features = list(categorical_features)  # Konversi ke list
+if 'Outcome' in df.columns:
+    categorical_features.append('Outcome')  # Tambahkan fitur 'Outcome' sebagai kategorikal
+    numerical_features = numerical_features.drop('Outcome')  # Hapus 'Outcome' dari fitur numerik
+
+
+
+Cell 3 - Normalisasi dengan Metode Min-Max Scaling
+
+from sklearn.preprocessing import MinMaxScaler
+
+# Inisialisasi scaler Min-Max
+scaler = MinMaxScaler()
+
+# Melakukan normalisasi pada fitur numerik
+df[numerical_features] = scaler.fit_transform(df[numerical_features])
+
+# Menyimpan hasil normalisasi ke file CSV
+df.to_csv('diabetes_normalized.csv', index=False)
+
+
+
+
+Cell 4 - 

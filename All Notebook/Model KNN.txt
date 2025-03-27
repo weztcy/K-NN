@@ -1,0 +1,7 @@
+Model KNN
+
+Sajikan data nilai K kombinasi, dan pembahasan focus ke alas an dipilih nilai K terbaik
+
+Evaluasi 
+
+tetap sajikan akurasi dan lain lain tetapi focus pada analisi perbandingan dengan model lain

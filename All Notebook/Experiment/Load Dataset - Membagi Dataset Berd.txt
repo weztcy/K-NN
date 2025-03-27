@@ -1,3 +1,0 @@
-Load Dataset -> Membagi Dataset Berdasarkan Tipe Data -> Normalisasi -> Feature Selection -> Split Data -> Melatih Model
-
-* Normalisasi hanya dilakukan pada data numerik, karena tujuan dari normalisasi adalah untuk mengubah skala angka sehingga dapat dibandingkan atau diproses lebih mudah oleh algoritma machine learning. 	
