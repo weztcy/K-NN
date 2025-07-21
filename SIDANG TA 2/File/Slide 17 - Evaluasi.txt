@@ -1,0 +1,7 @@
+Normalisasi data memiliki dampak signifikan terhadap performa model K-Nearest Neighbors (KNN). Tanpa normalisasi, akurasi maksimal hanya mencapai 0.7597 pada K = 11 dan cenderung fluktuatif. Precision, recall, dan F1-score pun rendah, menunjukkan bahwa perhitungan jarak terganggu akibat perbedaan skala antar fitur. Hal ini membuat model sulit mengenali pola secara akurat.
+
+Min-Max Scaling memberikan hasil terbaik di semua metrik, dengan akurasi tertinggi sebesar 0.8117 pada K = 7. Metrik lainnya seperti precision, recall, F1-score, dan specificity juga menunjukkan peningkatan signifikan. Ini karena skala semua fitur disamakan ke rentang 0–1, sehingga perhitungan jarak menjadi lebih proporsional.
+
+Z-Score Scaling menunjukkan hasil kompetitif, dengan akurasi mencapai 0.7922 dan ROC AUC tertinggi sebesar 0.8129. Teknik ini menstandarisasi data berdasarkan rata-rata dan standar deviasi, cocok untuk data berdistribusi normal dan mampu menjaga keseimbangan antar fitur.
+
+Sebaliknya, Decimal Scaling justru menghasilkan performa terendah. Akurasi hanya 0.7403 dan metrik lainnya stagnan. Karena hanya menggeser titik desimal tanpa menyesuaikan distribusi data, fitur tetap memiliki skala yang tidak seimbang, menyebabkan perhitungan jarak menjadi tidak akurat.

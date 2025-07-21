@@ -1,0 +1,9 @@
+Uji statistik dilakukan dengan metode Paired T-Test untuk memastikan apakah perbedaan performa yang diamati signifikan atau hanya kebetulan.
+
+
+Metode Paired T-Test dipilih karena tepat untuk menguji perbedaan kinerja antara teknik normalisasi dan kondisi tanpa normalisasi secara berpasangan, serta untuk mengevaluasi apakah terdapat perbedaan signifikan pada setiap metrik evaluasi.
+
+
+P-Value dihitung dari T-Statistic dan merepresentasikan probabilitas bahwa perbedaan yang diamati terjadi secara kebetulan, dengan asumsi hipotesis nol benar. 
+
+Jika P-Value ≤ 0,05, maka perbedaan performa dianggap signifikan secara statistik

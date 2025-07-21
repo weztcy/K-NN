@@ -1,0 +1,5 @@
+Hasil uji statistik menunjukkan bahwa Min-Max Scaling secara konsisten memberikan peningkatan signifikan pada semua metrik evaluasi, dengan P-Value di bawah 0,05. Peningkatan ini terjadi pada Accuracy, Precision, Recall, F1-Score, dan Specificity, yang menunjukkan bahwa metode ini meningkatkan performa model KNN secara valid dan stabil.
+
+Z-Score Scaling tidak menunjukkan signifikansi pada metrik apapun, kemungkinan karena variabilitas hasil atau ukuran sampel yang terbatas. Sedangkan Decimal Scaling memperlihatkan signifikansi pada beberapa metrik seperti Precision, Recall, dan F1-Score, meskipun performanya tidak merata dan lebih rendah dibanding Min-Max Scaling.
+
+Secara keseluruhan, Min-Max Scaling terbukti sebagai teknik normalisasi yang paling unggul dan direkomendasikan untuk meningkatkan performa model KNN pada dataset Pima Indians Diabetes.
