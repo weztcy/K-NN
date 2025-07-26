@@ -1,0 +1,28 @@
+penelitian dari kapan?
+
+ada kendala gak selama penelitian?
+
+selama penelitian ini mendapatkan revisi berapa kali?
+
+revisinya apa?
+
+latar belakang
+
+kenapa pilih penyakit diabetes? karena ya itu penyakit sering
+
+kenapa melakukan penelitian ini? dan apa bedanya dengan penelitian sebelumnya / penelitian terkait?
+
+kenapa pilih metode normalisasi tersebut? dari literatur gitu
+
+kenapa akurasi stuck di 80? bisa naik lagi gak?, jawab apa dong
+
+apakah ada saran, kelemahan, dan Batasan untuk penelitian selanjutnya
+
+fitur apa yang paling penting? lalu kenapa glukosa memiliki kontribusi yang paling penting? jawbannya di sisi medis atau rentang nilai dalam dataset?
+
+ini kan dataset isinya cewe semua ya, bagaimana kalua diterapkan di data cowo, bagaimana pengaruhnya?
+
+berikan pertanyaan dari sudut pandang statistika soale kan dosen statistika
+
+kenapa z-score scaling itu anomali, uji statistik berbanding terbalik dengan evaluasi. di evaluasi dia kompetitif secara metrik evaluasi dengan min-max scaling, tetapi kenapa di uji statistik itu malah tidak ada yang signifikan di setiap metrik evaluasi? dijawab karena akibat variabilitas hasil atau ukuran sampel yang terbatas.
+
