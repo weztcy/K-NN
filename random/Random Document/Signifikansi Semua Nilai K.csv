@@ -1,0 +1,4 @@
+Metode Normalisasi,Accuracy T-Statistic,Accuracy P-Value,Precision T-Statistic,Precision P-Value,Recall T-Statistic,Recall P-Value,F1-Score T-Statistic,F1-Score P-Value,Specificity T-Statistic,Specificity P-Value,ROC AUC T-Statistic,ROC AUC P-Value
+Min-Max Scaling vs Tanpa Normalisasi,-3.99754,0.01035,-4.12930,0.00909,-3.54493,0.01648,-4.02148,0.01011,-3.60555,0.01545,-14.30525,0.00003
+Z-Score (Standard Scaling) vs Tanpa Normalisasi,-2.15584,0.08363,-2.21749,0.07737,-2.35725,0.06497,-2.25157,0.07413,-1.78377,0.13454,-2.47726,0.05603
+Decimal Scaling vs Tanpa Normalisasi,2.52689,0.05273,2.73333,0.04112,2.92463,0.03284,2.77965,0.03892,0.91287,0.40318,0.84161,0.43839
