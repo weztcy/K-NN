@@ -1,0 +1,16 @@
+KNN
+
+1. Baseline (Normalisasi)
+
+2. Baseline + Smote
+
+3. Baseline + Feature Selection
+
+4. Baseline + Smote + Feature Selection
+
+Kombinasikan semua Langkah diatas menggunakan metode normalisasi
+
+
+Alur semua:
+
+Normalisasi -> Smote -> Feature Selection -> Model

@@ -1,0 +1,13 @@
+Penjelasan table 5 done
+
+Pemilihan fitur done
+
+Normaliasi dibawah table data testing sebelum dilakukan normalisasi
+
+min-max scaling
+
+decimal scaling
+
+model knn
+
+evaluasi

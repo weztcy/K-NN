@@ -1,0 +1,20 @@
+Fitur yang dipilih: ['Glucose', 'BMI', 'Age', 'DiabetesPedigreeFunction', 'BloodPressure', 'Pregnancies', 'Insulin', 'SkinThickness']
+Nilai k terbaik: 5
+Akurasi terbaik: 0.7536178107606679
+
+Fitur yang dipilih: ['Glucose', 'BMI', 'Age', 'DiabetesPedigreeFunction', 'BloodPressure', 'Pregnancies', 'Insulin']
+Nilai k terbaik: 7
+Akurasi terbaik: 0.7739641311069884
+
+Fitur yang dipilih: ['Glucose', 'BMI', 'Age', 'DiabetesPedigreeFunction', 'BloodPressure', 'Pregnancies']
+Nilai k terbaik: 11
+Akurasi terbaik: 0.7495774067202639
+
+Fitur yang dipilih: ['Glucose', 'BMI', 'Age', 'DiabetesPedigreeFunction', 'BloodPressure']
+Nilai k terbaik: 18
+Akurasi terbaik: 0.7760874046588333
+
+Fitur yang dipilih: ['Glucose', 'BMI', 'Age', 'DiabetesPedigreeFunction']
+Nilai k terbaik: 9
+Akurasi terbaik: 0.7719233147804576
+
